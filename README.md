@@ -4,4 +4,4 @@ Multi-task learning for segmentation and classification of breast tumors from ul
 The experimental code has not yet been fully organized and uploaded, and will be accelerated subsequently.
 
 contact details
-qiqihe@stu.xidian.edu.cn
+20210217h@gmail.com
