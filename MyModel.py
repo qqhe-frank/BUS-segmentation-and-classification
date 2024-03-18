@@ -101,8 +101,9 @@ class GSA(nn.Module):
         b, c, _, _ = x.size()
         g1 = self.gate(x)
         g2 = F.adaptive_avg_pool2d(torch.sigmoid(g1), 1)
+        g3 = F.adaptive_max_pool2d(torch.sigmoid(g1), 1)
         output = self.output(g2[:, 0, :, :].unsqueeze(1).repeat(1, c, 1, 1) * x + \
-                             g2[:, 1, :, :].unsqueeze(1).repeat(1, c, 1, 1) * x)
+                             g3[:, 1, :, :].unsqueeze(1).repeat(1, c, 1, 1) * x)
 
         return output
 
